@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\darla\Desktop\pokemon\poke_battle\__main__.py", line 4, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\darla\Desktop\pokemon\poke_battle\ui.py", line 87, in main
+    choix = input(PROMPT).strip()
+            ~~~~~^^^^^^^^
+EOFError: EOF when reading a line

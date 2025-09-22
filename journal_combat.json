@@ -1,0 +1,101 @@
+[
+  {
+    "tour": 1,
+    "p1": {
+      "nom": "Pikachu",
+      "pv": 74,
+      "pv_max": 95,
+      "statut": "aucun",
+      "niveaux": {
+        "atq": 0,
+        "def": 0,
+        "asp": 0,
+        "dsp": 0,
+        "vit": 0,
+        "prec": 0,
+        "esq": 0
+      }
+    },
+    "p2": {
+      "nom": "Bulbizarre",
+      "pv": 59,
+      "pv_max": 105,
+      "statut": "aucun",
+      "niveaux": {
+        "atq": 0,
+        "def": 0,
+        "asp": 0,
+        "dsp": 0,
+        "vit": 0,
+        "prec": 0,
+        "esq": 0
+      }
+    }
+  },
+  {
+    "tour": 2,
+    "p1": {
+      "nom": "Pikachu",
+      "pv": 38,
+      "pv_max": 95,
+      "statut": "aucun",
+      "niveaux": {
+        "atq": 0,
+        "def": 0,
+        "asp": 0,
+        "dsp": 0,
+        "vit": 0,
+        "prec": 0,
+        "esq": 0
+      }
+    },
+    "p2": {
+      "nom": "Bulbizarre",
+      "pv": 39,
+      "pv_max": 105,
+      "statut": "aucun",
+      "niveaux": {
+        "atq": 0,
+        "def": 0,
+        "asp": 0,
+        "dsp": 0,
+        "vit": 0,
+        "prec": 0,
+        "esq": 0
+      }
+    }
+  },
+  {
+    "tour": 3,
+    "p1": {
+      "nom": "Pikachu",
+      "pv": 38,
+      "pv_max": 95,
+      "statut": "aucun",
+      "niveaux": {
+        "atq": 0,
+        "def": 0,
+        "asp": 0,
+        "dsp": 0,
+        "vit": 0,
+        "prec": 0,
+        "esq": 0
+      }
+    },
+    "p2": {
+      "nom": "Bulbizarre",
+      "pv": 0,
+      "pv_max": 105,
+      "statut": "aucun",
+      "niveaux": {
+        "atq": 0,
+        "def": 0,
+        "asp": 0,
+        "dsp": 0,
+        "vit": 0,
+        "prec": 0,
+        "esq": 0
+      }
+    }
+  }
+]
