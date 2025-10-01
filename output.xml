@@ -1,145 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-09-21T20:43:36.599788" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-09-28T21:56:52.207536" rpa="false" schemaversion="5">
 <suite id="s1" name="Pokemon" source="C:\Users\darla\Desktop\pokemon">
 <suite id="s1-s1" name="Poke Battle" source="C:\Users\darla\Desktop\pokemon\poke_battle">
 <suite id="s1-s1-s1" name="Test Suites" source="C:\Users\darla\Desktop\pokemon\poke_battle\test_suites.robot">
-<test id="s1-s1-s1-t1" name="Test 3 : Duel Interactif" line="69">
-<kw name="Create List" owner="BuiltIn">
-<msg time="2025-09-21T20:43:36.801906" level="INFO">@{choices} = [ 1 | 1 | 2 | 1 | 1 | 1 | 1 | 1 | 1 ]</msg>
-<var>@{choices}</var>
-<arg>1</arg>
-<arg>1</arg>
-<arg>2</arg>
-<arg>1</arg>
-<arg>1</arg>
-<arg>1</arg>
-<arg>1</arg>
-<arg>1</arg>
-<arg>1</arg>
-<doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2025-09-21T20:43:36.801684" elapsed="0.000259"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-21T20:43:36.803084" level="INFO">${inputs} = 1
-1
-2
-1
-1
-1
-1
-1
-1
-</msg>
-<var>${inputs}</var>
-<arg>'\\n'.join(${choices}) + '\\n'</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-21T20:43:36.802797" elapsed="0.000313"/>
-</kw>
-<kw name="Run Process" owner="Process">
-<msg time="2025-09-21T20:43:36.804839" level="INFO">Starting process:
+<test id="s1-s1-s1-t1" name="Test 1 : Menu principal" line="15">
+<kw name="Start Process" owner="Process">
+<msg time="2025-09-28T21:56:53.635914" level="INFO">Starting process:
 python -m poke_battle</msg>
-<msg time="2025-09-21T20:43:36.821129" level="INFO">Waiting for process to complete.</msg>
-<msg time="2025-09-21T20:43:37.739451" level="INFO">Process completed.</msg>
 <arg>${CMD}</arg>
 <arg>shell=True</arg>
-<arg>stdin=${inputs}</arg>
 <arg>stdout=${TEMPDIR}/stdout.txt</arg>
 <arg>stderr=${TEMPDIR}/stderr.txt</arg>
-<doc>Runs a process and waits for it to complete.</doc>
-<status status="PASS" start="2025-09-21T20:43:36.803424" elapsed="0.936560"/>
+<arg>alias=jeu</arg>
+<doc>Starts a new process on background.</doc>
+<status status="PASS" start="2025-09-28T21:56:53.633546" elapsed="0.027109"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-28T21:56:55.663362" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-28T21:56:53.662450" elapsed="2.001449"/>
 </kw>
 <kw name="Get File" owner="OperatingSystem">
-<msg time="2025-09-21T20:43:37.742799" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\darla\Desktop\pokemon\poke_battle\temp\stdout.txt"&gt;C:\Users\darla\Desktop\pokemon\poke_battle\temp\stdout.txt&lt;/a&gt;'.</msg>
-<msg time="2025-09-21T20:43:37.744046" level="INFO">${stdout} = === Combat Pokémon – Console ===
+<msg time="2025-09-28T21:56:55.668335" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\darla\Desktop\pokemon\poke_battle\temp\stdout.txt"&gt;C:\Users\darla\Desktop\pokemon\poke_battle\temp\stdout.txt&lt;/a&gt;'.</msg>
+<msg time="2025-09-28T21:56:55.691073" level="INFO">${stdout} = === Combat Pokémon – Console ===
 1) Duel interactif
 2) Mode Démonstration (stable pour tests)
 3) Quitter
-&gt; Choisissez le Pokémon 1 :
- 1. Pikachu
- 2. Bulbizarre
- 3. Salamèche
- 4. Carapuce
-&gt; Choisissez ...</msg>
+&gt; </msg>
 <var>${stdout}</var>
 <arg>${TEMPDIR}/stdout.txt</arg>
 <doc>Returns the contents of a specified file.</doc>
-<status status="PASS" start="2025-09-21T20:43:37.742274" elapsed="0.001823"/>
+<status status="PASS" start="2025-09-28T21:56:55.667327" elapsed="0.024043"/>
 </kw>
 <kw name="Get File" owner="OperatingSystem">
-<msg time="2025-09-21T20:43:37.747701" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\darla\Desktop\pokemon\poke_battle\temp\stderr.txt"&gt;C:\Users\darla\Desktop\pokemon\poke_battle\temp\stderr.txt&lt;/a&gt;'.</msg>
-<msg time="2025-09-21T20:43:37.751759" level="INFO">${stderr} = </msg>
+<msg time="2025-09-28T21:56:55.696098" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\darla\Desktop\pokemon\poke_battle\temp\stderr.txt"&gt;C:\Users\darla\Desktop\pokemon\poke_battle\temp\stderr.txt&lt;/a&gt;'.</msg>
+<msg time="2025-09-28T21:56:55.697127" level="INFO">${stderr} = </msg>
 <var>${stderr}</var>
 <arg>${TEMPDIR}/stderr.txt</arg>
 <doc>Returns the contents of a specified file.</doc>
-<status status="PASS" start="2025-09-21T20:43:37.744862" elapsed="0.007130"/>
+<status status="PASS" start="2025-09-28T21:56:55.695123" elapsed="0.002072"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-21T20:43:37.756283" level="INFO">${out} = === Combat Pokémon – Console ===
+<msg time="2025-09-28T21:56:55.699304" level="INFO">${out} = === Combat Pokémon – Console ===
 1) Duel interactif
 2) Mode Démonstration (stable pour tests)
 3) Quitter
-&gt; Choisissez le Pokémon 1 :
- 1. Pikachu
- 2. Bulbizarre
- 3. Salamèche
- 4. Carapuce
-&gt; Choisissez ...</msg>
+&gt; </msg>
 <var>${out}</var>
 <arg>${stdout}${stderr}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-21T20:43:37.754632" elapsed="0.001949"/>
+<status status="PASS" start="2025-09-28T21:56:55.698798" elapsed="0.000558"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${out}</arg>
-<arg>== État actuel ==</arg>
+<arg>=== Combat Pokémon – Console ===</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-09-21T20:43:37.759162" elapsed="0.000703"/>
+<status status="PASS" start="2025-09-28T21:56:55.701300" elapsed="0.000274"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${out}</arg>
-<arg>Pikachu</arg>
+<arg>1) Duel interactif</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-09-21T20:43:37.763562" elapsed="0.000791"/>
+<status status="PASS" start="2025-09-28T21:56:55.703387" elapsed="0.000514"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${out}</arg>
-<arg>Bulbizarre</arg>
+<arg>2) Mode Démonstration (stable pour tests)</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-09-21T20:43:37.766281" elapsed="0.000337"/>
+<status status="PASS" start="2025-09-28T21:56:55.704766" elapsed="0.000168"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${out}</arg>
-<arg>PP</arg>
+<arg>3) Quitter</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-09-21T20:43:37.769072" elapsed="0.000381"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${out}</arg>
-<arg>inflige</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-09-21T20:43:37.770241" elapsed="0.000692"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${out}</arg>
-<arg>PV</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-09-21T20:43:37.772171" elapsed="0.000349"/>
+<status status="PASS" start="2025-09-28T21:56:55.706278" elapsed="0.000478"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${out}</arg>
 <arg>${PROMPT}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-09-21T20:43:37.773356" elapsed="0.000142"/>
+<status status="PASS" start="2025-09-28T21:56:55.707958" elapsed="0.000229"/>
 </kw>
-<doc>Vérifie le bon déroulement d'un duel interactif (smoke test) en simulant une séquence d'entrées valides.</doc>
-<status status="PASS" start="2025-09-21T20:43:36.800297" elapsed="0.973534"/>
+<doc>Vérifier la présence des trois options et du prompt</doc>
+<status status="PASS" start="2025-09-28T21:56:53.631941" elapsed="2.077268"/>
 </test>
 <doc>Suite de tests Robot Framework pour le mini-projet Pokémon</doc>
-<status status="PASS" start="2025-09-21T20:43:36.647103" elapsed="1.128762"/>
+<status status="PASS" start="2025-09-28T21:56:52.356360" elapsed="3.354307"/>
 </suite>
-<status status="PASS" start="2025-09-21T20:43:36.644925" elapsed="1.132989"/>
+<status status="PASS" start="2025-09-28T21:56:52.354250" elapsed="3.357807"/>
 </suite>
-<status status="PASS" start="2025-09-21T20:43:36.601982" elapsed="1.177542"/>
+<status status="PASS" start="2025-09-28T21:56:52.212083" elapsed="3.500998"/>
 </suite>
 <statistics>
 <total>

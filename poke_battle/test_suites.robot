@@ -15,7 +15,7 @@ ${JOURNAL}        journal_combat.json
 Test 1 : Menu principal
     [Documentation]    Vérifier la présence des trois options et du prompt
 
-     # Lance le processus du jeu en redirigeant la sortie standard et erreur dans des fichiers temporaires
+    # Lance le processus du jeu en redirigeant la sortie standard et erreur dans des fichiers temporaires
     Start Process    ${CMD}    shell=True    stdout=${TEMPDIR}/stdout.txt    stderr=${TEMPDIR}/stderr.txt    alias=jeu
 
     #Attend deux secondes pour laisser le temps au programme d'afficher le menu
@@ -45,10 +45,9 @@ Test 2 : Mode Démonstration
     # Simule le choix de l'option "2" (Mode Démonstration) en l'envoyant à la commande
     ${result}=    Run Process    echo 2 | ${CMD}    shell=True
 
-    # Récupère le contenu des fichiers stdout, stderr et concatène les deux sorties
+    # Récupère le contenu du fichier stdout
     ${stdout}=    Get File    ${TEMPDIR}/stdout.txt
-    ${stderr}=    Get File    ${TEMPDIR}/stderr.txt
-    ${out}=    Set Variable    ${result.stdout}${result.stderr}
+    ${out}=    Set Variable    ${result.stdout}
 
     # Vérifie les options affichées
     Should Contain    ${out}    Tour 1
