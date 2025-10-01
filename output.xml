@@ -1,96 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-09-28T21:56:52.207536" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-01T21:27:33.903053" rpa="false" schemaversion="5">
 <suite id="s1" name="Pokemon" source="C:\Users\darla\Desktop\pokemon">
 <suite id="s1-s1" name="Poke Battle" source="C:\Users\darla\Desktop\pokemon\poke_battle">
 <suite id="s1-s1-s1" name="Test Suites" source="C:\Users\darla\Desktop\pokemon\poke_battle\test_suites.robot">
-<test id="s1-s1-s1-t1" name="Test 1 : Menu principal" line="15">
+<test id="s1-s1-s1-t1" name="Test 4 : Gestion des entrées invalides" line="95">
 <kw name="Start Process" owner="Process">
-<msg time="2025-09-28T21:56:53.635914" level="INFO">Starting process:
+<msg time="2025-10-01T21:27:34.089110" level="INFO">Starting process:
 python -m poke_battle</msg>
 <arg>${CMD}</arg>
 <arg>shell=True</arg>
 <arg>stdout=${TEMPDIR}/stdout.txt</arg>
 <arg>stderr=${TEMPDIR}/stderr.txt</arg>
+<arg>stdin=PIPE</arg>
 <arg>alias=jeu</arg>
 <doc>Starts a new process on background.</doc>
-<status status="PASS" start="2025-09-28T21:56:53.633546" elapsed="0.027109"/>
+<status status="PASS" start="2025-10-01T21:27:34.088116" elapsed="0.011345"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-09-28T21:56:55.663362" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-10-01T21:27:36.101481" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-09-28T21:56:53.662450" elapsed="2.001449"/>
+<status status="PASS" start="2025-10-01T21:27:34.100259" elapsed="2.001756"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-01T21:27:36.106088" level="INFO">@{choices} = [ 1 | 1 | 99 | 1 | 1 | 1 | 1 | 1 ]</msg>
+<var>@{choices}</var>
+<arg>1</arg>
+<arg>1</arg>
+<arg>99</arg>
+<arg>1</arg>
+<arg>1</arg>
+<arg>1</arg>
+<arg>1</arg>
+<arg>1</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-01T21:27:36.104970" elapsed="0.001220"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-01T21:27:36.109274" level="INFO">${inputs} = 1
+1
+99
+1
+1
+1
+1
+1
+</msg>
+<var>${inputs}</var>
+<arg>'\\n'.join(${choices}) + '\\n'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-01T21:27:36.108469" elapsed="0.000878"/>
+</kw>
+<kw name="Run Process" owner="Process">
+<msg time="2025-10-01T21:27:36.114691" level="INFO">Starting process:
+python -m poke_battle</msg>
+<msg time="2025-10-01T21:27:36.127042" level="INFO">Waiting for process to complete.</msg>
+<msg time="2025-10-01T21:27:36.252300" level="INFO">Process completed.</msg>
+<msg time="2025-10-01T21:27:36.252457" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<var>${result}</var>
+<arg>${CMD}</arg>
+<arg>shell=True</arg>
+<arg>stdin=${inputs}</arg>
+<arg>stdout=${TEMPDIR}/stdout.txt</arg>
+<arg>stderr=${TEMPDIR}/stderr.txt</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2025-10-01T21:27:36.110882" elapsed="0.141604"/>
 </kw>
 <kw name="Get File" owner="OperatingSystem">
-<msg time="2025-09-28T21:56:55.668335" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\darla\Desktop\pokemon\poke_battle\temp\stdout.txt"&gt;C:\Users\darla\Desktop\pokemon\poke_battle\temp\stdout.txt&lt;/a&gt;'.</msg>
-<msg time="2025-09-28T21:56:55.691073" level="INFO">${stdout} = === Combat Pokémon – Console ===
+<msg time="2025-10-01T21:27:36.253269" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\darla\Desktop\pokemon\poke_battle\temp\stdout.txt"&gt;C:\Users\darla\Desktop\pokemon\poke_battle\temp\stdout.txt&lt;/a&gt;'.</msg>
+<msg time="2025-10-01T21:27:36.253695" level="INFO">${stdout} = === Combat Pokémon – Console ===
 1) Duel interactif
 2) Mode Démonstration (stable pour tests)
 3) Quitter
-&gt; </msg>
+&gt; Choisissez le Pokémon 1 :
+ 1. Pikachu
+ 2. Bulbizarre
+ 3. Salamèche
+ 4. Carapuce
+&gt; Choisissez ...</msg>
 <var>${stdout}</var>
 <arg>${TEMPDIR}/stdout.txt</arg>
 <doc>Returns the contents of a specified file.</doc>
-<status status="PASS" start="2025-09-28T21:56:55.667327" elapsed="0.024043"/>
+<status status="PASS" start="2025-10-01T21:27:36.253107" elapsed="0.000619"/>
 </kw>
 <kw name="Get File" owner="OperatingSystem">
-<msg time="2025-09-28T21:56:55.696098" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\darla\Desktop\pokemon\poke_battle\temp\stderr.txt"&gt;C:\Users\darla\Desktop\pokemon\poke_battle\temp\stderr.txt&lt;/a&gt;'.</msg>
-<msg time="2025-09-28T21:56:55.697127" level="INFO">${stderr} = </msg>
+<msg time="2025-10-01T21:27:36.254430" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\darla\Desktop\pokemon\poke_battle\temp\stderr.txt"&gt;C:\Users\darla\Desktop\pokemon\poke_battle\temp\stderr.txt&lt;/a&gt;'.</msg>
+<msg time="2025-10-01T21:27:36.254730" level="INFO">${stderr} = </msg>
 <var>${stderr}</var>
 <arg>${TEMPDIR}/stderr.txt</arg>
 <doc>Returns the contents of a specified file.</doc>
-<status status="PASS" start="2025-09-28T21:56:55.695123" elapsed="0.002072"/>
+<status status="PASS" start="2025-10-01T21:27:36.254273" elapsed="0.000480"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T21:56:55.699304" level="INFO">${out} = === Combat Pokémon – Console ===
+<msg time="2025-10-01T21:27:36.255468" level="INFO">${out} = === Combat Pokémon – Console ===
 1) Duel interactif
 2) Mode Démonstration (stable pour tests)
 3) Quitter
-&gt; </msg>
+&gt; Choisissez le Pokémon 1 :
+ 1. Pikachu
+ 2. Bulbizarre
+ 3. Salamèche
+ 4. Carapuce
+&gt; Choisissez ...</msg>
 <var>${out}</var>
 <arg>${stdout}${stderr}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T21:56:55.698798" elapsed="0.000558"/>
+<status status="PASS" start="2025-10-01T21:27:36.255176" elapsed="0.000323"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${out}</arg>
-<arg>=== Combat Pokémon – Console ===</arg>
+<arg>Entrée invalide, réessayez.</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-09-28T21:56:55.701300" elapsed="0.000274"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${out}</arg>
-<arg>1) Duel interactif</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-09-28T21:56:55.703387" elapsed="0.000514"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${out}</arg>
-<arg>2) Mode Démonstration (stable pour tests)</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-09-28T21:56:55.704766" elapsed="0.000168"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${out}</arg>
-<arg>3) Quitter</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-09-28T21:56:55.706278" elapsed="0.000478"/>
+<status status="PASS" start="2025-10-01T21:27:36.255730" elapsed="0.000149"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${out}</arg>
 <arg>${PROMPT}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-09-28T21:56:55.707958" elapsed="0.000229"/>
+<status status="PASS" start="2025-10-01T21:27:36.256205" elapsed="0.000137"/>
 </kw>
-<doc>Vérifier la présence des trois options et du prompt</doc>
-<status status="PASS" start="2025-09-28T21:56:53.631941" elapsed="2.077268"/>
+<doc>Vérifie que le programme gère correctement les entrées invalides et affiche un message d'erreur approprié.</doc>
+<status status="PASS" start="2025-10-01T21:27:34.087162" elapsed="2.169376"/>
 </test>
 <doc>Suite de tests Robot Framework pour le mini-projet Pokémon</doc>
-<status status="PASS" start="2025-09-28T21:56:52.356360" elapsed="3.354307"/>
+<status status="PASS" start="2025-10-01T21:27:33.933738" elapsed="2.323907"/>
 </suite>
-<status status="PASS" start="2025-09-28T21:56:52.354250" elapsed="3.357807"/>
+<status status="PASS" start="2025-10-01T21:27:33.932172" elapsed="2.326220"/>
 </suite>
-<status status="PASS" start="2025-09-28T21:56:52.212083" elapsed="3.500998"/>
+<status status="PASS" start="2025-10-01T21:27:33.904686" elapsed="2.354188"/>
 </suite>
 <statistics>
 <total>

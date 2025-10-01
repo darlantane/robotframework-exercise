@@ -1,5 +1,0 @@
-=== Combat Pokémon – Console ===
-1) Duel interactif
-2) Mode Démonstration (stable pour tests)
-3) Quitter
-> 

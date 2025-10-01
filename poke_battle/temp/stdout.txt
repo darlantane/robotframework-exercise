@@ -2,4 +2,55 @@
 1) Duel interactif
 2) Mode Démonstration (stable pour tests)
 3) Quitter
+> Choisissez le Pokémon 1 :
+ 1. Pikachu
+ 2. Bulbizarre
+ 3. Salamèche
+ 4. Carapuce
+> Choisissez le Pokémon 2 :
+ 1. Pikachu
+ 2. Bulbizarre
+ 3. Salamèche
+ 4. Carapuce
+> Entrée invalide, réessayez.
 > 
+== État actuel ==
+Pikachu: 95/95 PV | Statut: aucun
+Pikachu: 95/95 PV | Statut: aucun
+
+Choisissez les capacités (par numéro):
+ P1 [1] Éclair (PP 15)
+ P1 [2] Vive-Attaque (PP 30)
+ P1 [3] Cage-Éclair (PP 20)
+ P1 [4] Grognement (PP 40)
+ P2 [1] Éclair (PP 15)
+ P2 [2] Vive-Attaque (PP 30)
+ P2 [3] Cage-Éclair (PP 20)
+ P2 [4] Grognement (PP 40)
+P1 > P2 > 
+— Tour 1 —
+Pikachu utilise Éclair !
+Éclair inflige 58 dégâts à Pikachu.(37/95 PV)
+Pikachu utilise Éclair !
+Éclair inflige 52 dégâts à Pikachu.(43/95 PV)
+
+== État actuel ==
+Pikachu: 43/95 PV | Statut: aucun
+Pikachu: 37/95 PV | Statut: aucun
+
+Choisissez les capacités (par numéro):
+ P1 [1] Éclair (PP 14)
+ P1 [2] Vive-Attaque (PP 30)
+ P1 [3] Cage-Éclair (PP 20)
+ P1 [4] Grognement (PP 40)
+ P2 [1] Éclair (PP 14)
+ P2 [2] Vive-Attaque (PP 30)
+ P2 [3] Cage-Éclair (PP 20)
+ P2 [4] Grognement (PP 40)
+P1 > P2 > 
+— Tour 2 —
+Pikachu utilise Éclair !
+Éclair inflige 57 dégâts à Pikachu.(0/95 PV)
+Pikachu est K.O. !
+
+>>> Vainqueur : Pikachu <<<
