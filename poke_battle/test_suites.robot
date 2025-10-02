@@ -1,6 +1,6 @@
 *** Settings ***
 # -*- coding: utf-8 -*-
-Documentation     Suite de tests Robot Framework pour le mini-projet Pokémon
+Documentation     Suite de tests Robot Framework : projet Pokémon
 Library           Process
 Library           OperatingSystem
 Library           JSONLibrary
@@ -16,7 +16,7 @@ Test 1 : Menu principal
     [Documentation]    Vérifier la présence des trois options et du prompt
 
     # Lance le processus du jeu en redirigeant la sortie standard et erreur dans des fichiers temporaires
-    Start Process    ${CMD}    shell=True    stdout=${TEMPDIR}/stdout.txt    stderr=${TEMPDIR}/stderr.txt    alias=jeu
+    Start Process    ${CMD}    shell=True    stdout=${TEMPDIR}/stdout.txt    stderr=${TEMPDIR}/stderr.txt
 
     #Attend deux secondes pour laisser le temps au programme d'afficher le menu
     Sleep    2s
@@ -37,7 +37,7 @@ Test 2 : Mode Démonstration
     [Documentation]    Vérifie l'exécution du mode démonstration
 
     # Lance le processus du jeu en redirigeant la sortie standard et erreur dans des fichiers temporaires
-    Start Process    ${CMD}    shell=True    stdout=${TEMPDIR}/stdout.txt    stderr=${TEMPDIR}/stderr.txt    stdin=PIPE    alias=jeu
+    Start Process    ${CMD}    shell=True    stdout=${TEMPDIR}/stdout.txt    stderr=${TEMPDIR}/stderr.txt    stdin=PIPE
 
     #Attend deux secondes pour laisser le temps au programme d'afficher le menu
     Sleep    2s
